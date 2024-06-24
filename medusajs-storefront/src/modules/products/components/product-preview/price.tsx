@@ -1,6 +1,7 @@
 import { Text, clx } from "@medusajs/ui"
 
 import { PriceType } from "../product-actions"
+import { StarIcon } from "@heroicons/react/24/outline"
 
 export default async function PreviewPrice({ price }: { price: PriceType }) {
   return (
@@ -14,8 +15,8 @@ export default async function PreviewPrice({ price }: { price: PriceType }) {
         className={clx("text-ui-fg-muted", {
           "text-ui-fg-interactive": price.price_type === "sale",
         })}
-      >
-        {price.calculated_price}
+      > 
+      <span className="font-extrabold text-black text-black text-2xl">   {price.calculated_price} </span>
       </Text>
     </>
   )
