@@ -65,10 +65,10 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                             <div className="grid grid-cols-3 grid-rows-2 text-small-regular gap-x-4 flex-1">
                               <span className="font-semibold">Date placed</span>
                               <span className="font-semibold">
-                                Order number
+                                Bestellnummer
                               </span>
                               <span className="font-semibold">
-                                Total amount
+                               Gesamtanzahl
                               </span>
                               <span>
                                 {new Date(order.created_at).toDateString()}

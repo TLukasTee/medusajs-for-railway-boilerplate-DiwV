@@ -24,7 +24,8 @@ export default async function Nav() {
               href="/"
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
             >
-              Medusa Store
+    <img src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png" alt="Z Nutrition Logo" className="h-14" />
+
             </LocalizedClientLink>
           </div>
 
@@ -40,10 +41,10 @@ export default async function Nav() {
                 </LocalizedClientLink>
               )}
               <LocalizedClientLink
-                className="hover:text-ui-fg-base"
+                className="hover:text-ui-fg-base bg-red-700 text-white px-4 py-2 rounded-full text-base font-semibold uppercase tracking-tight "
                 href="/account"
               >
-                Account
+                Anmelden
               </LocalizedClientLink>
             </div>
             <Suspense

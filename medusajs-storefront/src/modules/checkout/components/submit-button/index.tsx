@@ -21,7 +21,6 @@ export function SubmitButton({
       className={className}
       type="submit"
       isLoading={pending}
-      variant={variant}
     >
       {children}
     </Button>

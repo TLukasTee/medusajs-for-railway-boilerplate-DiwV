@@ -146,20 +146,20 @@ export default function ProductActions({
           )}
         </div>
 
-        <ProductPrice product={product} variant={variant} region={region} />
+        <ProductPrice product={product} variant={variant} region={region}  />
 
         <Button
           onClick={handleAddToCart}
           disabled={!inStock || !variant}
           variant="primary"
-          className="w-full h-10"
+          className="w-full h-10 bg-red-700 text-white "
           isLoading={isAdding}
         >
           {!variant
             ? "Select variant"
             : !inStock
             ? "Out of stock"
-            : "Add to cart"}
+            : "Zum Warenkorb hinzufügen"}
         </Button>
         <MobileActions
           product={product}

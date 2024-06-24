@@ -76,7 +76,7 @@ const Shipping: React.FC<ShippingProps> = ({
             }
           )}
         >
-          Delivery
+          Lieferung
           {!isOpen && cart.shipping_methods.length > 0 && <CheckCircleSolid />}
         </Heading>
         {!isOpen &&
@@ -146,12 +146,12 @@ const Shipping: React.FC<ShippingProps> = ({
 
           <Button
             size="large"
-            className="mt-6"
+            className="mt-6 text-white hover:bg-red-800 outline-0 border-0  bg-red-700 border-white outline-white"
             onClick={handleSubmit}
             isLoading={isLoading}
             disabled={!cart.shipping_methods[0]}
           >
-            Continue to payment
+            Weiter zur Zahlung
           </Button>
         </div>
       ) : (

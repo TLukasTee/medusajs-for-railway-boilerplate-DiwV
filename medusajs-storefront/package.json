@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.1",
+    "@heroicons/react": "^2.1.4",
     "@hookform/error-message": "^2.0.0",
     "@medusajs/link-modules": "^0.2.3",
     "@medusajs/medusa-js": "^6.1.7",
@@ -36,6 +37,7 @@
     "@stripe/stripe-js": "^1.29.0",
     "algoliasearch": "^4.20.0",
     "lodash": "^4.17.21",
+    "medusa-plugin-meilisearch": "^2.0.10",
     "medusa-react": "^9.0.0",
     "next": "^14.0.0",
     "react": "^18.2.0",
@@ -59,6 +61,7 @@
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "cypress": "^9.5.2",
+    "daisyui": "^4.12.7",
     "eslint": "8.10.0",
     "eslint-config-next": "^13.4.5",
     "postcss": "^8.4.8",
