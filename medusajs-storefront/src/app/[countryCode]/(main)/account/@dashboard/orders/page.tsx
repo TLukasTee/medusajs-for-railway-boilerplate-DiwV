@@ -5,7 +5,7 @@ import { listCustomerOrders } from "@lib/data"
 import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
-  title: "Orders",
+  title: "Bestellungen",
   description: "Overview of your previous orders.",
 }
 
@@ -19,10 +19,9 @@ export default async function Orders() {
   return (
     <div className="w-full">
       <div className="mb-8 flex flex-col gap-y-4">
-        <h1 className="text-2xl-semi">Orders</h1>
+        <h1 className="text-2xl-semi">Deine Bestellungen</h1>
         <p className="text-base-regular">
-          View your previous orders and their status. You can also create
-          returns or exchanges for your orders if needed.
+        Hier kannst du alle deine bisherigen Bestellungen einsehen.
         </p>
       </div>
       <div>

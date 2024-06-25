@@ -42,16 +42,16 @@ export default async function ProductPreview({
       
        
       </div>
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-      <div className="flex justify-between items-center mb-4">
-        <span className="bg-black text-white text-xs px-2 py-1 rounded">Geschmack</span>
+      <div className="bg-white p-6 rounded-lg shadow-lg gap-x-12">
+      <div className="flex justify-between items-center mb-4 gap-x-4">
+        <span className="bg-black text-white text-xs px-2 py-1 rounded">NEU!</span>
       
       </div>
       <Thumbnail
           thumbnail={productPreview.thumbnail}
           size="full"
           isFeatured={isFeatured}
-          className="w-full h-48 object-cover mb-4"
+          className="w-full h-72 object-cover mb-4"
         />
       <div className="flex items-center space-x-2 mb-2">
         <span className="bg-gray-200 text-xs px-2 py-1 rounded">Geschmack</span>

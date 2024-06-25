@@ -11,11 +11,11 @@ import CountrySelect from "../country-select"
 import { Bars3Icon } from "@heroicons/react/24/outline"
 
 const SideMenuItems = {
-  Home: "/",
-  Store: "/store",
-  Search: "/search",
+  Start: "/",
+  Shop: "/store",
+  Suche: "/search",
   Account: "/account",
-  Cart: "/cart",
+  Warenkorb: "/cart",
 }
 
 const SideMenu = ({ regions }: { regions: Region[] | null }) => {
@@ -85,7 +85,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                         />
                       </div>
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Medusa Store. All rights
+                        © {new Date().getFullYear()} ZNUTRITION. All rights
                         reserved.
                       </Text>
                     </div>
