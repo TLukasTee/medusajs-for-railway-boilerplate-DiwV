@@ -1,4 +1,4 @@
-import { EnvelopeIcon, GiftTopIcon, TruckIcon, UserIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, GiftTopIcon, InboxStackIcon, PhoneIcon, TruckIcon, UserIcon } from '@heroicons/react/24/outline';
 
 import React from 'react';
 import { FaHeadset } from 'react-icons/fa';
@@ -21,16 +21,16 @@ const HeroBanner: React.FC = () => {
         </div>
         <div className="flex flex-col items-center">
             <div  className=' bg-gray-200 rounded-full w-24 h-24'> 
-         <FaHeadset className="w-12 h-12 mb-2 text-red-600  mx-auto items-center flex justify-center relative top-6" />
-</div>
+            <PhoneIcon style={{ width: '3rem', height: '3rem', marginBottom: '0.5rem', color: '#dc2626', position: 'relative', top: '1.5rem' }} className="mx-auto items-center flex justify-center" />
+          </div>
           <span className='text-xl font-extrabold mt-4'>Kundenservice</span>
           <span className='text-sm text-neutral-800'> Keine Warteschleife | 100% Persönlich </span>
         </div>
         
         <div className="flex flex-col items-center ">
             <div  className=' bg-gray-200 rounded-full w-24 h-24'> 
-         <LuPackage className="w-12 h-12 mb-2 text-red-600  mx-auto items-center flex justify-center relative top-6" />
-</div>
+            <InboxStackIcon style={{ width: '3rem', height: '3rem', marginBottom: '0.5rem', color: '#dc2626', position: 'relative', top: '1.5rem' }} className="mx-auto items-center flex justify-center" />
+            </div>
           <span className='text-xl font-extrabold mt-4'>Versandkostenfrei</span>
           <span className='text-sm text-neutral-800' > Regulär ab €75  </span>
         </div>

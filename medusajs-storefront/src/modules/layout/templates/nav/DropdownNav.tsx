@@ -22,7 +22,6 @@ import {
 } from '@headlessui/react'
 
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import CartSidebar from './CartSidebar';
 import CartButton from '@modules/layout/components/cart-button';
 import LocalizedClientLink from '@modules/common/components/localized-client-link';
 

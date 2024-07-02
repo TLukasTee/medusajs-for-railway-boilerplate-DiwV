@@ -11,7 +11,7 @@ import { ChevronDownIcon, UserIcon } from "@heroicons/react/24/outline"
 import { hasFlag } from 'country-flag-icons'
 import  { AT } from 'country-flag-icons/react/3x2'
 import Header from "./Header"
-import DropdownNav from "./useCart"
+import DropdownNav from "./DropdownNav"
 
 
 
