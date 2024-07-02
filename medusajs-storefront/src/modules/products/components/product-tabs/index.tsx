@@ -6,7 +6,6 @@ import Back from "@modules/common/icons/back"
 import FastDelivery from "@modules/common/icons/fast-delivery"
 import Refresh from "@modules/common/icons/refresh"
 
-import Accordion from "./accordion"
 import ChevronDown from "@modules/common/icons/chevron-down"
 
 type ProductTabsProps = {
@@ -56,7 +55,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   </div>
 ) : null}
 </div>
-      <Accordion type="multiple" className="mb-4">
+      {/* <Accordion type="multiple" className="mb-4">
         {tabs.map((tab, i) => (
           <Accordion.Item
             key={i}
@@ -67,7 +66,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
             {tab.component}
           </Accordion.Item>
         ))}
-      </Accordion>
+      </Accordion> */}
     </div>
   )
 }

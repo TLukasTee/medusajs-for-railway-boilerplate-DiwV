@@ -72,22 +72,7 @@ const plugins = [
       },
     },
   },
-  {
-    resolve: `medusa-plugin-algolia`,
-    options: {
-      applicationId: process.env.ALGOLIA_APP_ID,
-      adminApiKey: process.env.ALGOLIA_ADMIN_API_KEY,
-      settings: {
-        products: {
-          // MeiliSearch's setting options to be set on a particular index
-          searchableAttributes: ["title", "description", "variant_sku"],
-          displayedAttributes: ["title", "description", "variant_sku"],
-      },
-     
-
-      },
-    },
-  },
+  
 ];
 
 const modules = {
