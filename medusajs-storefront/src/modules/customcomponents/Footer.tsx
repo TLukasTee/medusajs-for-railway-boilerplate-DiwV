@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram } from 'lucide-react';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const FooterCustom: React.FC = () => {
   return (
@@ -29,10 +29,10 @@ const FooterCustom: React.FC = () => {
         <div className="flex justify-between items-center border-t border-gray-200 pt-8">
           <div className="flex space-x-4">
             <a href="#" className="text-gray-400 hover:text-gray-600">
-              <Facebook size={24} />
+              <FaFacebook size={24} />
             </a>
             <a href="#" className="text-gray-400 hover:text-gray-600">
-              <Instagram size={24} />
+              <FaInstagram size={24} />
             </a>
           </div>
           <p className="text-sm text-gray-500">© 2024, ZNutrition</p>
