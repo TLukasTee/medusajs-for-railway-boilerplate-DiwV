@@ -14,7 +14,7 @@ const CartTemplate = ({
   customer: Omit<Customer, "password_hash"> | null
 }) => {
   return (
-    <div className="py-12">
+    <div className="py-12  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  pb-12">
       <div className="content-container">
         {cart?.items.length ? (
           <div className="grid grid-cols-1 small:grid-cols-[1fr_360px] gap-x-40">

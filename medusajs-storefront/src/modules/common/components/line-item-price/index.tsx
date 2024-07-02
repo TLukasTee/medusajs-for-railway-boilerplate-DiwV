@@ -46,7 +46,7 @@ const LineItemPrice = ({
         )}
         <span
           className={clx("text-base-regular", {
-            "text-ui-fg-interactive": hasReducedPrice,
+            "text-black font-bold": hasReducedPrice,
           })}
         >
           {formatAmount({

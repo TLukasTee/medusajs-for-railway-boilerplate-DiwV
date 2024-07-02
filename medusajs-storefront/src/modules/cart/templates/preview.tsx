@@ -17,12 +17,12 @@ const ItemsPreviewTemplate = ({ items, region }: ItemsTemplateProps) => {
   return (
     <div
       className={clx({
-        "pl-[1px] overflow-y-scroll overflow-x-hidden no-scrollbar max-h-[420px]":
+        "pl-[1px] overflow-y-scroll overflow-x-hidden no-scrollbar max-h-[420px] py-12  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  pb-12":
           hasOverflow,
       })}
     >
-      <Table>
-        <Table.Body>
+      <Table className="py-12  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  pb-12">
+        <Table.Body className="py-12  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  pb-12">
           {items && region
             ? items
                 .sort((a, b) => {

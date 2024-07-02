@@ -31,24 +31,36 @@ export default function ProductPrice({
   return (
     <div className="flex flex-col text-ui-fg-base">
       <span
-        className={clx("text-xl-semi", {
-          "text-ui-fg-interactive": selectedPrice.price_type === "sale",
+        className={clx("text-3xl font-bold text-black", {
+          "": selectedPrice.price_type === "sale",
         })}
       >
         {!variant && "From "}
         {selectedPrice.calculated_price}
+    
       </span>
+      <p className="text-xs mb-4 text-gray-500">inkl. MwSt.</p>
       {selectedPrice.price_type === "sale" && (
         <>
-          <p>
-            <span className="text-ui-fg-subtle">Original: </span>
-            <span className="line-through">{selectedPrice.original_price}</span>
-          </p>
-          <span className="text-ui-fg-interactive">
-            -{selectedPrice.percentage_diff}%
-          </span>
+
+
+        <div className="bg-gray-200 gap-y-4  rounded-md p-4">
+        <span className="line-through text-gray-400 text-lg"></span>
+
+
+         <p className="font-bold mb-2">Code <span className="bg-red-600 text-white px-2 py-1 rounded">ZNUTRITION</span> ist aktiv.</p>
+          <p className="font-bold text-xl">  {selectedPrice.calculated_price} <span className="line-through text-gray-500">{selectedPrice.original_price}</span></p>
+    
+
+          </div> 
+
         </>
+
+        
       )}
     </div>
+
+
+
   )
 }

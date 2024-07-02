@@ -19,19 +19,15 @@ export default function ProductRail({
   }
 
   return (
-    <div className="content-container py-12 small:py-24  bg-white">
-      <div className="flex justify-between mb-8">
-        <Text className=" font-bold tracking-tight text-neutral-700 text-2xl ">Unsere Bestseller</Text>
-        
-        <InteractiveLink href={`/collections/${collection.handle}`}>
-          Alle Produkte
-        </InteractiveLink>
-      </div>
-      <ul className="grid grid-cols-2 small:grid-cols-3 gap-x-6 gap-y-24 small:gap-y-36">
-        {products &&
+    <div className="mx-auto max-w-2xl px-12 py-16 sm:px-6 sm:pt-24 sm:pb-38 lg:max-w-7xl lg:px-8">
+      <h2 className="text-3xl font-bold mb-2">Unsere Bestseller</h2>
+      <h3 className="text-xl mb-6">Besonders beliebt </h3>
+      <ul className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      {products &&
           products.map((product) => (
             <li key={product.id}>
               <ProductPreview
+
                 productPreview={product}
                 region={region}
                 isFeatured

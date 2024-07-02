@@ -22,7 +22,7 @@ const Summary = ({ cart }: SummaryProps) => {
       <Divider />
       <CartTotals data={cart} />
       <LocalizedClientLink href={"/checkout?step=" + cart.checkout_step}>
-        <div className="w-full text-white bg-red-700 rounded-2xl text-center font-semibold border-2 border-white px-6 py-3"> Weiter zum Versand </div>
+        <div className="w-full text-white bg-red-600 rounded-full text-center font-semibold border-2 border-white px-6 py-3"> Weiter zum Versand </div>
       </LocalizedClientLink>
     </div>
   )

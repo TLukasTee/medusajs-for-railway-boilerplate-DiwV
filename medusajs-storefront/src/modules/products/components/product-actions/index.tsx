@@ -151,8 +151,8 @@ export default function ProductActions({
         <Button
           onClick={handleAddToCart}
           disabled={!inStock || !variant}
-          variant="primary"
-          className="w-full h-10 bg-red-700 text-white "
+          variant="transparent"
+          className="w-full bg-red-600 text-white hover:bg-red-700 py-3 rounded-lg font-bold mb-4 shadow-0 outline-0  "
           isLoading={isAdding}
         >
           {!variant

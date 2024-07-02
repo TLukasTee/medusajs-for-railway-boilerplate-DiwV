@@ -2,7 +2,7 @@ import { Table } from "@medusajs/ui"
 
 const SkeletonLineItem = () => {
   return (
-    <Table.Row className="w-full m-4">
+    <Table.Row className="py-12  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  pb-12">
       <Table.Cell className="p-4 w-24">
         <div className="flex w-24 h-24 p-4 bg-gray-200 animate-pulse" />
       </Table.Cell>

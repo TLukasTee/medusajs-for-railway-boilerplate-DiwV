@@ -9,12 +9,12 @@ const SignInPrompt = () => {
          Hast du bereits einen Account?
         </Heading>
         <Text className="txt-medium text-ui-fg-subtle mt-2">
-          Melde dich an, um deine Bestellung abzuschließen.
+        Melde dich an für ein personalisiertes Einkaufserlebnis.
         </Text>
       </div>
       <div>
         <LocalizedClientLink href="/account">
-          <div className="w-full text-white bg-red-700 rounded-2xl text-center font-semibold border-2 border-white px-6 py-3">
+          <div className="w-full text-white bg-red-600 rounded-full text-center font-semibold border-2 border-white px-6 py-3">
            Anmelden
           </div>
         </LocalizedClientLink>

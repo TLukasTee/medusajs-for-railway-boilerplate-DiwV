@@ -11,11 +11,11 @@ type ItemsTemplateProps = {
 
 const ItemsTemplate = ({ items, region }: ItemsTemplateProps) => {
   return (
-    <div>
-      <div className="pb-3 flex items-center">
+    <div >
+      <div className="pb-3  flex items-center">
         <Heading className="text-[2rem] leading-[2.75rem]">Warenkorb</Heading>
       </div>
-      <Table>
+      <Table >
         <Table.Header className="border-t-0">
           <Table.Row className="text-ui-fg-subtle txt-medium-plus">
             <Table.HeaderCell className="!pl-0">Produkt</Table.HeaderCell>
@@ -29,7 +29,7 @@ const ItemsTemplate = ({ items, region }: ItemsTemplateProps) => {
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
-        <Table.Body>
+        <Table.Body >
           {items && region
             ? items
                 .sort((a, b) => {

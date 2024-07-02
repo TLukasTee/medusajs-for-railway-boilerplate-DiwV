@@ -7,6 +7,7 @@ import FastDelivery from "@modules/common/icons/fast-delivery"
 import Refresh from "@modules/common/icons/refresh"
 
 import Accordion from "./accordion"
+import ChevronDown from "@modules/common/icons/chevron-down"
 
 type ProductTabsProps = {
   product: PricedProduct
@@ -14,19 +15,48 @@ type ProductTabsProps = {
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = [
+  
     {
-      label: "Product Information",
-      component: <ProductInfoTab product={product} />,
-    },
-    {
-      label: "Shipping & Returns",
+      label: "Versand & Rückgabe",
       component: <ShippingInfoTab />,
     },
   ]
 
   return (
     <div className="w-full">
-      <Accordion type="multiple">
+      <div className="text-small-regular py-8">
+  
+       
+  <div className="">
+  
+  <label className="block text-sm font-medium mb-1">Geschmack</label>
+  <div className="relative">
+    <select className="w-full p-2 border rounded appearance-none">
+      <option>{product.material ? product.material : "Neutral"}</option>
+    </select>
+    <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2" />
+  </div>
+</div>
+
+{/* <div className="mb-4">
+  <label className="block text-sm font-medium mb-1">Inhaltsgröße</label>
+  <div className="relative">
+    <select className="w-full p-2 border rounded appearance-none">
+      <option>1000g</option>
+    </select>
+    <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2" />
+  </div>
+  <p className="text-sm text-gray-500 mt-1">30 Portionen</p>
+</div> */}
+
+
+{product.tags?.length ? (
+  <div>
+    <span className="font-semibold">-</span>
+  </div>
+) : null}
+</div>
+      <Accordion type="multiple" className="mb-4">
         {tabs.map((tab, i) => (
           <Accordion.Item
             key={i}
@@ -45,36 +75,10 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 const ProductInfoTab = ({ product }: ProductTabsProps) => {
   return (
     <div className="text-small-regular py-8">
-      <div className="grid grid-cols-2 gap-x-8">
-        <div className="flex flex-col gap-y-4">
-          <div>
-            <span className="font-semibold">Material</span>
-            <p>{product.material ? product.material : "-"}</p>
-          </div>
-          <div>
-            <span className="font-semibold">Country of origin</span>
-            <p>{product.origin_country ? product.origin_country : "-"}</p>
-          </div>
-          <div>
-            <span className="font-semibold">Type</span>
-            <p>{product.type ? product.type.value : "-"}</p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-y-4">
-          <div>
-            <span className="font-semibold">Weight</span>
-            <p>{product.weight ? `${product.weight} g` : "-"}</p>
-          </div>
-          <div>
-            <span className="font-semibold">Dimensions</span>
-            <p>
-              {product.length && product.width && product.height
-                ? `${product.length}L x ${product.width}W x ${product.height}H`
-                : "-"}
-            </p>
-          </div>
-        </div>
-      </div>
+  
+       
+
+      
       {product.tags?.length ? (
         <div>
           <span className="font-semibold">Tags</span>
@@ -91,31 +95,29 @@ const ShippingInfoTab = () => {
         <div className="flex items-start gap-x-2">
           <FastDelivery />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">Schnelle Lieferung</span>
             <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
+            Ihr Paket wird innerhalb von 2-3 Werktagen an Ihrem Abholort oder bequem zu Hause ankommen.
+
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
           <Refresh />
           <div>
-            <span className="font-semibold">Simple exchanges</span>
+            <span className="font-semibold">Einfache Rückgabe</span>
             <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
-              product for a new one.
+            Passt nicht ganz? Keine Sorge - wir tauschen Ihr Produkt gegen ein neues um.
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
           <Back />
           <div>
-            <span className="font-semibold">Easy returns</span>
+            <span className="font-semibold">Einfache Rückgabe</span>
             <p className="max-w-sm">
-              Just return your product and we&apos;ll refund your money. No
-              questions asked – we&apos;ll do our best to make sure your return
-              is hassle-free.
+            Schicken Sie einfach Ihr Produkt zurück und wir erstatten Ihnen Ihr Geld. Keine Fragen – wir tun unser Bestes, um sicherzustellen, dass Ihre Rückgabe problemlos verläuft.
+
             </p>
           </div>
         </div>

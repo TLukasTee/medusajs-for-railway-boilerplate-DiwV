@@ -92,7 +92,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
         {appliedDiscount ? (
           <div className="w-full flex items-center">
             <div className="flex flex-col w-full">
-              <Heading className="txt-medium">Discount applied:</Heading>
+              <Heading className="txt-medium">Ermäßigungen:</Heading>
               <div className="flex items-center justify-between w-full max-w-full">
                 <Text className="flex gap-x-1 items-baseline txt-small-plus w-4/5 pr-1">
                   <span>Code:</span>
@@ -105,7 +105,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                 >
                   <Trash size={14} />
                   <span className="sr-only">
-                    Remove discount code from order
+                    Code entfernen
                   </span>
                 </button>
               </div>
@@ -117,7 +117,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="txt-medium text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
+                className="txt-medium text-black hover:text-gray-800 font-bold "
               >
                 Füge einen Rabattcode hinzu
               </button>
@@ -129,14 +129,14 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
               <>
                 <div className="flex w-full gap-x-2 items-center">
                   <Input
-                    label="Bitte geben Sie einen Code ein"
+                    label="Code eingeben..."
                     name="code"
                     type="text"
                     autoFocus={false}
                   />
-                  <SubmitButton variant="secondary">Hinzufügen</SubmitButton>
+                  <SubmitButton className="bg-red-600 font-bold outline-0 border-0 px-12 text-white" variant="transparent" >Hinzufügen</SubmitButton>
                 </div>
-                <ErrorMessage error={message} />
+                <div className="text-red-600 mt-2"> Dieser Code ist nicht verfügbar. </div>
               </>
             )}
           </form>

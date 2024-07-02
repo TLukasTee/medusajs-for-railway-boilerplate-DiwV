@@ -6,6 +6,12 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
+import HeroCustom from "@modules/layout/HeroCustom"
+import Divider from "@modules/customcomponents/Divider"
+import Outlet from "@modules/customcomponents/Outlet"
+import HeroBanner from "@modules/customcomponents/HeroBanner"
+import ZNAthletes from "@modules/customcomponents/Athletes"
+import FAQ from "@modules/customcomponents/FAQ"
 
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
@@ -68,11 +74,19 @@ export default async function Home({
 
   return (
     <>
-      <Hero />
-      <div className="py-12 bg-white">
+      {/* <Hero /> */}
+     
+      <div className="py-12  ">
+<HeroCustom />
+<Divider />
+<HeroBanner  />
         <ul className="flex flex-col gap-x-6 bg-white">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
+
+        <Outlet />
+        <ZNAthletes />
+        <FAQ />
       </div>
     </>
   )

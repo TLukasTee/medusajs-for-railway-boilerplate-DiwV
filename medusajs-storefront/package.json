@@ -21,7 +21,7 @@
     "@types/react": "17.0.40"
   },
   "dependencies": {
-    "@headlessui/react": "^1.6.1",
+    "@headlessui/react": "^2.1.1",
     "@heroicons/react": "^2.1.4",
     "@hookform/error-message": "^2.0.0",
     "@medusajs/link-modules": "^0.2.3",
@@ -36,6 +36,7 @@
     "@stripe/react-stripe-js": "^1.7.2",
     "@stripe/stripe-js": "^1.29.0",
     "algoliasearch": "^4.20.0",
+    "country-flag-icons": "^1.5.12",
     "lodash": "^4.17.21",
     "medusa-plugin-meilisearch": "^2.0.10",
     "medusa-react": "^9.0.0",

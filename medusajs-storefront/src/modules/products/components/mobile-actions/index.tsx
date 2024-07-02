@@ -76,17 +76,17 @@ const MobileActions: React.FC<MobileActionsProps> = ({
               <span>{product.title}</span>
               <span>—</span>
               {selectedPrice ? (
-                <div className="flex items-end gap-x-2 text-ui-fg-base">
+                <div className="flex items-end gap-x-2 text-ui-fg-base ">
                   {selectedPrice.price_type === "sale" && (
                     <p>
-                      <span className="line-through text-small-regular">
+                      <span className="line-through text-small-regular text-gray-400">
                         {selectedPrice.original_price}
                       </span>
                     </p>
                   )}
                   <span
                     className={clx({
-                      "text-ui-fg-interactive":
+                      "text-gray-700 font-bold":
                         selectedPrice.price_type === "sale",
                     })}
                   >
@@ -97,8 +97,8 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 <div></div>
               )}
             </div>
-            <div className="grid grid-cols-2 w-full gap-x-4">
-              <Button onClick={open} variant="secondary" className="w-full">
+            <div className="grid grid-cols-1 pb-5 w-full gap-x-4">
+              {/* <Button onClick={open} variant="transparent" className="w-full">
                 <div className="flex items-center justify-between w-full">
                   <span>
                     {variant
@@ -107,12 +107,13 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                   </span>
                   <ChevronDown />
                 </div>
-              </Button>
+              </Button> */}
               <Button
                 onClick={handleAddToCart}
                 disabled={!inStock || !variant}
-                className="w-full"
+                className="w-full bg-red-600 outline-0 text-white text-base"
                 isLoading={isAdding}
+                variant="transparent"
               >
                 {!variant
                   ? "Select variant"
