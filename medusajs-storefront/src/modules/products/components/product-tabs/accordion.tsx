@@ -54,23 +54,25 @@ const Item: React.FC<AccordionItemProps> = ({
         className
       )}
     >
-      <AccordionPrimitive.Header className="px-1">
-        <div className="flex flex-col">
-          <div className="flex w-full items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Text className="text-ui-fg-subtle text-sm">{title}</Text>
+      <div className="px-1">
+        <AccordionPrimitive.Header>
+          <div className="flex flex-col">
+            <div className="flex w-full items-center justify-between">
+              <div className="flex items-center gap-4">
+                <Text className="text-ui-fg-subtle text-sm">{title}</Text>
+              </div>
+              <AccordionPrimitive.Trigger>
+                {customTrigger || <MorphingTrigger />}
+              </AccordionPrimitive.Trigger>
             </div>
-            <AccordionPrimitive.Trigger>
-              {customTrigger || <MorphingTrigger />}
-            </AccordionPrimitive.Trigger>
+            {subtitle && (
+              <Text as="span" size="small" className="mt-1">
+                {subtitle}
+              </Text>
+            )}
           </div>
-          {subtitle && (
-            <Text as="span" size="small" className="mt-1">
-              {subtitle}
-            </Text>
-          )}
-        </div>
-      </AccordionPrimitive.Header>
+        </AccordionPrimitive.Header>
+      </div>
    
       <AccordionPrimitive.Content
         forceMount={forceMountContent}
