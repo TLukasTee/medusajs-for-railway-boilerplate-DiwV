@@ -81,7 +81,7 @@ export default async function Home({
 <Divider />
 <HeroBanner  />
         <ul className="flex flex-col gap-x-6 bg-white">
-          <FeaturedProducts collections={collections} region={region} />
+          <FeaturedProducts specificCollectionId="pcol_01J1WAE5YHJ4NM1CS3A8VKPNQZ" collections={collections} region={region} />
         </ul>
 
         <Outlet />

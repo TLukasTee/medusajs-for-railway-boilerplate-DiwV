@@ -7,11 +7,11 @@ import { LuPackage } from 'react-icons/lu';
 const HeroBanner: React.FC = () => {
   return (
 
-    <div>
+    <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  pb-8 pt-24'>
        
-<div className="flex flex-col rounded-lg overflow-hidden py-0 pb-6 pt-24  ">
+<div className="flex flex-col rounded-lg overflow-hidden  ">
  
-      <div className="bg-gray-100/10 border-4 border-gray-100/50 flex flex-wrap justify-around items-center text-center text-lg text-red-500 md:shadow-md  md:mx-24 rounded-2xl p-10">
+      <div className="bg-gray-100/10 border-4 border-gray-100/50 flex flex-wrap justify-between items-center text-center text-lg text-red-500 md:shadow-md  rounded-3xl py-8 px-12">
         <div className="flex flex-col items-center ">
             <div  className=' bg-gray-200 rounded-full w-24 h-24'> 
          <TruckIcon className="w-12 h-12 mb-2 text-red-600  mx-auto items-center flex justify-center relative top-6" />

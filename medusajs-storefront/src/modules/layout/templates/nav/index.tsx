@@ -58,14 +58,14 @@ export default async function Nav() {
                 </div>
                 <div className="flex lg:ml-6">
                 <form className="max-w-md mx-auto">   
-                        <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                        <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Suche</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                 </svg>
                             </div>
-                            <input type="search" id="default-search" className="block py-2 w-8 outline-red-500 border-0 sm:border-2 px-2 sm:p-4 sm:ps-10 ps-7  placeholder:text-white  sm:placeholder:text-neutral-800  sm:w-96 text-sm text-neutral-900 border border-neutral-900 rounded-full bg-white-50 focus:ring-neutral-500 focus:border-neutral-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500" placeholder="Suche nach Whey, Magnesium..." required />
+                            <input type="search" id="default-search" className="block py-2 w-8 outline-red-500 border-0 sm:border-2 px-2 sm:p-4 sm:ps-10 ps-7  placeholder:text-white  sm:placeholder:text-neutral-800  sm:w-96 text-sm text-neutral-900  rounded-full " placeholder="Suche nach Whey, Magnesium..." required />
                         </div>
                     </form>
                 </div>
@@ -74,22 +74,22 @@ export default async function Nav() {
                     <img
                       src="https://catamphetamine.gitlab.io/country-flag-icons/3x2/AT.svg"
                       alt=""
-                      className="block h-auto w-5 flex-shrink-0"
+                      className="block h-auto w-7 flex-shrink-0"
                     />
-                    <span className="ml-3 block text-sm font-medium">AT</span>
-                    <span className="sr-only">, change currency</span>
+                    <span className="ml-3 block text-base font-medium">AT</span>
+                    <span className="sr-only">, Land ändern</span>
                   </a>
                 </div>
 
                 {/* Search */}
-                <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                <div className="ml-2 flow-root lg:mx-4">
+                  <a href="account" className="group  flex items-center p-2">
                     <UserIcon
                       className="h-8 w-8 flex-shrink-0 text-neutral-700 group-hover:text-gray-800"
                       aria-hidden="true"
                     />
             
-                    <span className="sr-only">items in cart, view bag</span>
+                    <span className="sr-only">Produkte im Warenkorb</span>
                   </a>
                 </div>
                 <Suspense
@@ -98,7 +98,7 @@ export default async function Nav() {
                       className="hover:text-ui-fg-base flex gap-2"
                       href="/cart"
                     >
-                      Cart  
+                      Warenkorb
                     </LocalizedClientLink>
                   }
                 >

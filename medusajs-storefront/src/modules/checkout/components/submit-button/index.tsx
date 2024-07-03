@@ -18,9 +18,10 @@ export function SubmitButton({
   return (
     <Button
       size="large"
-      className={className}
+      className="bg-red-600 hover:bg-red-700 text-white"
       type="submit"
       isLoading={pending}
+      variant="transparent"
     >
       {children}
     </Button>

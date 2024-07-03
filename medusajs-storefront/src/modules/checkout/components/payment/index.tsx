@@ -178,6 +178,7 @@ const Payment = ({
               className="mt-6 text-white hover:bg-red-800 outline-0 border-0  bg-red-700 border-white outline-white"
               onClick={handleSubmit}
               isLoading={isLoading}
+              variant="transparent"
               disabled={(isStripe && !cardComplete) || !cart.payment_session}
             >
               Weiter zur Gesamtübersicht

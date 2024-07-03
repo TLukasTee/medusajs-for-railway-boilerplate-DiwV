@@ -6,6 +6,7 @@ import { Button } from "@medusajs/ui"
 import { isEqual } from "lodash"
 import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
+import { TbShoppingBagPlus } from "react-icons/tb";
 
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { addToCart } from "@modules/cart/actions"
@@ -152,14 +153,20 @@ export default function ProductActions({
           onClick={handleAddToCart}
           disabled={!inStock || !variant}
           variant="transparent"
-          className="w-full bg-red-600 text-white hover:bg-red-700 py-3 rounded-lg font-bold mb-4 shadow-0 outline-0  "
+          className="w-full bg-red-600 text-lg max-h-14 text-white border-2 rounded-full hover:bg-red-700 py-3  font-bold mb-4 shadow-0 outline-0  "
           isLoading={isAdding}
-        >
-          {!variant
-            ? "Select variant"
-            : !inStock
-            ? "Out of stock"
-            : "Zum Warenkorb hinzufügen"}
+        >            
+
+
+      {!variant
+          ? "Select variant"
+          : !inStock
+          ? "Ausverkauft"
+          : (
+              <>
+                  <TbShoppingBagPlus className="w-5 m-0 p-0 h-5" /> In den Warenkorb
+              </>
+            )}
         </Button>
         <MobileActions
           product={product}

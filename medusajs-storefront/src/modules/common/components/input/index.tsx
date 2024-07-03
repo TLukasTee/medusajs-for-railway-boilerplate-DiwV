@@ -1,6 +1,5 @@
 import { Label } from "@medusajs/ui"
 import React, { useEffect, useImperativeHandle, useState } from "react"
-
 import Eye from "@modules/common/icons/eye"
 import EyeOff from "@modules/common/icons/eye-off"
 
@@ -20,18 +19,33 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputRef = React.useRef<HTMLInputElement>(null)
     const [showPassword, setShowPassword] = useState(false)
     const [inputType, setInputType] = useState(type)
+    const [isFocused, setIsFocused] = useState(false)
+    const [hasValue, setHasValue] = useState(false)
 
     useEffect(() => {
-      if (type === "password" && showPassword) {
-        setInputType("text")
-      }
-
-      if (type === "password" && !showPassword) {
-        setInputType("password")
+      if (type === "password") {
+        setInputType(showPassword ? "text" : "password")
       }
     }, [type, showPassword])
 
+    useEffect(() => {
+      // Initialize hasValue based on any default value
+      setHasValue(!!inputRef.current?.value)
+    }, [])
+
     useImperativeHandle(ref, () => inputRef.current!)
+
+    const handleFocus = () => setIsFocused(true)
+    const handleBlur = () => {
+      setIsFocused(false)
+      setHasValue(!!inputRef.current?.value)
+    }
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setHasValue(!!e.target.value)
+      if (props.onChange) {
+        props.onChange(e)
+      }
+    }
 
     return (
       <div className="flex flex-col w-full">
@@ -42,16 +56,24 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             type={inputType}
             name={name}
-            placeholder=" "
             required={required}
-            className="pt-4 pb-1 block w-full h-11 px-4 mt-0 bg-ui-bg-field border rounded-md appearance-none focus:outline-none focus:ring-0 focus:shadow-borders-interactive-with-active border-ui-border-base hover:bg-ui-bg-field-hover"
+            className={`pt-4 pb-1 block w-full h-11 px-4 mt-0 bg-ui-bg-field border rounded-md appearance-none focus:outline-none focus:ring-0 focus:shadow-borders-interactive-with-active border-ui-border-base hover:bg-ui-bg-field-hover ${
+              isFocused || hasValue ? "pt-6" : ""
+            }`}
             {...props}
             ref={inputRef}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onChange={handleChange}
           />
           <label
             htmlFor={name}
             onClick={() => inputRef.current?.focus()}
-            className="flex items-center focus:hidden focus-visible:hidden justify-center mx-3 px-1 transition-all absolute duration-300 top-3 -z-1 origin-0 text-ui-fg-subtle"
+            className={`absolute left-4 transition-all duration-300 pointer-events-none ${
+              isFocused || hasValue
+                ? "text-xs top-1 text-ui-fg-subtle"
+                : "text-base top-3 text-ui-fg-subtle"
+            }`}
           >
             {label}
             {required && <span className="text-rose-500">*</span>}

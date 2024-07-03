@@ -44,11 +44,11 @@ export default function ProductPrice({
         <>
 
 
-        <div className="bg-gray-200 gap-y-4  rounded-md p-4">
+        <div className="bg-gray-100 shadow-lg gap-y-4  rounded-md p-7">
         <span className="line-through text-gray-400 text-lg"></span>
 
 
-         <p className="font-bold mb-2">Code <span className="bg-red-600 text-white px-2 py-1 rounded">ZNUTRITION</span> ist aktiv.</p>
+         <p className="font-bold mb-4 text-xs">Rabattcode <span className="bg-red-600 text-white px-2 py-1 rounded font-semibold">ZNUTRITION</span> ist automatisch aktiviert.</p>
           <p className="font-bold text-xl">  {selectedPrice.calculated_price} <span className="line-through text-gray-500">{selectedPrice.original_price}</span></p>
     
 

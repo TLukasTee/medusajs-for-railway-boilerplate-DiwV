@@ -6,7 +6,7 @@ subsets: ['latin'], });
 export default function HeroCustom() {
     return (
       <div className="relative overflow-hidden bg-white">
-        <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-56 lg:pt-32 ">
+        <div className="pb-80 pt-16 sm:pb-40 sm:pt-14 lg:pb-56 lg:pt-14 ">
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-xl">
              
@@ -17,7 +17,7 @@ export default function HeroCustom() {
                     src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png"
                     alt=""
                   />
-                                    <span className={`${Beba.className} sm:text-3xl text-xl tracking-wider text-black uppercase sm:ml-1 ml-1 mt-0.5 sm:mt-2.5 font-bold`}>Nutrition | ÖSTERREICH</span>
+                                    <span className={`${Beba.className} sm:text-3xl text-xl tracking-wider text-black uppercase sm:ml-1 ml-1 mt-0.5 sm:mt-3.5 font-bold`}>Nutrition | ÖSTERREICH</span>
 
                 </a>
               </div>
@@ -26,7 +26,7 @@ export default function HeroCustom() {
           </h1>
 
             <p> 
-            Unser hochwertiges Protein unterstützt Sie optimal bei Ihrem Muskelaufbau und Ihrer Regeneration. Von Whey-Protein bis zu pflanzlichen Alternativen – bei Z-Nutrition finden Sie genau das, was Sie brauchen.
+            Unser hochwertiges Protein unterstützt Sie optimal bei Ihrem Muskelaufbau und Ihrer Regeneration. Von Whey-Protein bis zu einer breiten Auswahl an Vitalstoffen – bei Z-Nutrition finden Sie genau das, was Sie brauchen.
                 </p>
             </div>
             <div>

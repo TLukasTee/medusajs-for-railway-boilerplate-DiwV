@@ -88,7 +88,7 @@ const Shipping: React.FC<ShippingProps> = ({
                 onClick={handleEdit}
                 className="text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
               >
-                Edit
+                Ändern
               </button>
             </Text>
           )}
@@ -146,6 +146,7 @@ const Shipping: React.FC<ShippingProps> = ({
 
           <Button
             size="large"
+            variant="transparent"
             className="mt-6 text-white hover:bg-red-800 outline-0 border-0  bg-red-700 border-white outline-white"
             onClick={handleSubmit}
             isLoading={isLoading}
@@ -160,7 +161,7 @@ const Shipping: React.FC<ShippingProps> = ({
             {cart && cart.shipping_methods.length > 0 && (
               <div className="flex flex-col w-1/3">
                 <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                  Method
+                  Zahlungsmethode
                 </Text>
                 <Text className="txt-medium text-ui-fg-subtle">
                   {cart.shipping_methods[0].shipping_option.name} (

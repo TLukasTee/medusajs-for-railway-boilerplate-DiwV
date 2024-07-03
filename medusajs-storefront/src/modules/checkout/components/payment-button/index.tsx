@@ -217,6 +217,9 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
         isLoading={submitting}
         onClick={handlePayment}
         size="large"
+        variant="transparent"
+        className=" text-white hover:bg-red-800 outline-0 border-0  bg-red-700 border-white outline-white"
+
       >
         Bestellung aufgeben
       </Button>

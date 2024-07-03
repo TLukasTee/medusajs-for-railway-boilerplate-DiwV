@@ -28,9 +28,9 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
        
   <div className="">
   
-  <label className="block text-sm font-medium mb-1">Geschmack</label>
+  <label className="block text-sm font-medium mb-1 text-neutral-700">Geschmack</label>
   <div className="relative">
-    <select className="w-full p-2 border rounded appearance-none">
+    <select className="w-full p-2 border rounded-xl border-2 appearance-none ">
       <option>{product.material ? product.material : "Neutral"}</option>
     </select>
     <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2" />

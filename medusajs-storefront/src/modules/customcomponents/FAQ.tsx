@@ -52,7 +52,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 p-8 bg-white shadow-md border-4 rounded-2xl mx-24 mb-24">
+    <div className="flex flex-col md:flex-row gap-8 p-8 bg-white shadow-md border-4 rounded-2xl max-w-7xl px-4 sm:px-6 lg:px-8  pb-8 pt-24 mx-auto">
       <div className="md:w-1/2">
         <h1 className="text-4xl font-bold mb-4">FAQ</h1>
         <p className="mb-4">Hier beantworten wir die häufigst gestellten Fragen:</p>

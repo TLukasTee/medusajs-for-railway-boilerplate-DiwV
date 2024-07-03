@@ -24,6 +24,7 @@ import {
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import CartButton from '@modules/layout/components/cart-button';
 import LocalizedClientLink from '@modules/common/components/localized-client-link';
+import Image from 'next/image';
 
 const navigation = {
   categories: [
@@ -49,8 +50,8 @@ const navigation = {
           id: 'clothing',
           name: 'Vitalstoffe ',
           items: [
-            { name: 'Magensium', href: '#' },
-            { name: 'Omega 3', href: '#' },
+            { name: 'Magensium', href: '/products/magnesium-citrate' },
+            { name: 'Omega 3', href: '/products/omega3' },
            
           ],
         },
@@ -58,16 +59,16 @@ const navigation = {
           id: 'accessories',
           name: 'Proteine ',
           items: [
-            { name: 'Hydro Whey ', href: '#' },
-            
+            { name: 'Hydro Whey Vanille Eis', href: '/products/hydro-whey-vanille-eis'},
+            { name: 'Hydro Whey Banane', href: '/products/hydro-whey-isolate-banane'},
+            { name: 'Hydro Whey Erdbeere', href: '/products/hydro-whey-isolate-erdbeere'},
           ],
         },
         {
           id: 'brands',
-          name: 'Zubehör',
+          name: 'Zusatstoffe',
           items: [
-            { name: 'Shaker', href: '#' },
-            { name: 'Pre Workout', href: '#' },
+            { name: 'Gorilla Pre Workout', href: '/products/preworkout-gorilla-zilime' },
            
           ],
         },
@@ -128,11 +129,13 @@ export default function DropdownNav() {
                                   <div className="col-start-2 grid grid-cols-2 gap-x-8">
                                     {category.featured.map((item) => (
                                       <div key={item.name} className="group relative text-base sm:text-sm">
-                                        <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                          <img
+                                        <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 ">
+                                          <Image
                                             src={item.imageSrc}
                                             alt={item.imageAlt}
-                                            className="object-cover object-center"
+                                            width={400}
+                                            height={400}
+                                            className="object-cover object-center hover:opacity-75"
                                           />
                                         </div>
                                         <a href={item.href} className="mt-6 block font-medium text-gray-900">
