@@ -19,9 +19,9 @@ export default async function Orders() {
   return (
     <div className="w-full">
       <div className="mb-8 flex flex-col gap-y-4">
-        <h1 className="text-2xl-semi">Deine Bestellungen</h1>
+        <h1 className="text-2xl-semi font-extrabold text-xl">Deine Bestellungen</h1>
         <p className="text-base-regular">
-        Hier kannst du alle deine bisherigen Bestellungen einsehen.
+        Hier kannst du alle bisherigen Bestellungen einsehen.
         </p>
       </div>
       <div>

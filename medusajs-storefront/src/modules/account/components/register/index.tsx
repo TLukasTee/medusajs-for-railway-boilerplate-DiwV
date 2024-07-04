@@ -17,24 +17,25 @@ const Register = ({ setCurrentView }: Props) => {
   const [message, formAction] = useFormState(signUp, null)
 
   return (
-    <div className="max-w-sm flex flex-col items-center">
-      <h1 className="text-large-semi uppercase mb-6">
-        Become a ZNUTRITION Member
+    <div className="max-w-lg mx-auto sm:ml-28 flex flex-col items-center">
+      
+      <h1 className="text-large-semi  font-bold sm:text-xl uppercase mb-6">
+        Werde ein ZNUTRITION Mitglied!
+       
       </h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your ZNUTRITION Member profile, and get access to an enhanced
-        shopping experience.
+      <p className="text-center text-base-regular text-sm text-ui-fg-base mb-4">
+        Erstelle dein Mitgliedsprofil und erhalte exklusive Angebote und Rabatte.
       </p>
-      <form className="w-full flex flex-col" action={formAction}>
+      <form className="w-full flex flex-col text-center justify-center mx-auto items-center" action={formAction}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="First name"
+            label="Vorname"
             name="first_name"
             required
             autoComplete="given-name"
           />
           <Input
-            label="Last name"
+            label="Nachname"
             name="last_name"
             required
             autoComplete="family-name"
@@ -46,9 +47,9 @@ const Register = ({ setCurrentView }: Props) => {
             type="email"
             autoComplete="email"
           />
-          <Input label="Phone" name="phone" type="tel" autoComplete="tel" />
+          <Input label="Telefonnummer" name="phone" type="tel" autoComplete="tel" />
           <Input
-            label="Password"
+            label="Passwort"
             name="password"
             required
             type="password"
@@ -56,32 +57,33 @@ const Register = ({ setCurrentView }: Props) => {
           />
         </div>
         <ErrorMessage error={message} />
-        <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to ZNUTRITION&apos;s{" "}
+        <span className="text-center text-ui-fg-base text-small-regular mt-6 ">
+        Beim Klicken auf „Jetzt registrieren“ stimmst du den{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
             className="underline"
           >
-            Privacy Policy
+            Datenschutzbestimmungen
           </LocalizedClientLink>{" "}
-          and{" "}
+          und{" "}
           <LocalizedClientLink
             href="/content/terms-of-use"
             className="underline"
           >
-            Terms of Use
+            Allgemeinen Geschäftsbedingungen 
           </LocalizedClientLink>
-          .
+          {" "}zu.
         </span>
-        <SubmitButton className="w-full mt-6">Join</SubmitButton>
+        <div className="my-3"> </div>
+        <SubmitButton className="w-full mt-6 text-center mx-auto flex justify-center items-center ">Jetzt registrieren</SubmitButton>
       </form>
       <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Already a member?{" "}
+        Schon Mitglied ?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
         >
-          Sign in
+          Anmelden
         </button>
         .
       </span>

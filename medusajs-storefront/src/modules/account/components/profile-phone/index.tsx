@@ -32,7 +32,7 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
   return (
     <form action={formAction} className="w-full">
       <AccountInfo
-        label="Phone"
+        label="Telefonnummer"
         currentInfo={`${customer.phone}`}
         isSuccess={successState}
         isError={!!state.error}

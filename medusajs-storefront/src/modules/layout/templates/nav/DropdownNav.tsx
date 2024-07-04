@@ -33,14 +33,14 @@ const navigation = {
       name: 'Unser Sortiment',
       featured: [
         {
-          name: 'NEU | HYDRO WHEY VANILLE ',
-          href: '#',
-          imageSrc: 'https://res.cloudinary.com/dd0kypcrk/image/upload/v1719410123/Design_ohne_Titel_1280x1280_1_j6vzuk.svg',
+          name: 'NEU! | VITALSTOFFE ',
+          href: '/collections/vitalstoffe',
+          imageSrc: 'https://res.cloudinary.com/dd0kypcrk/image/upload/v1720087687/Hydro_Whey_Vanille_g9fj2w.png',
           imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
         },
         {
-          name: 'Z-NUTRITION | Hydro Whey',
-          href: '#',
+          name: 'Z-NUTRITION | HYDRO WHEY',
+          href: '/collections/proteinpulver',
           imageSrc: 'https://res.cloudinary.com/dd0kypcrk/image/upload/v1719408230/Design_ohne_Titel_1280x1280_skbzp5.svg',
           imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
         },

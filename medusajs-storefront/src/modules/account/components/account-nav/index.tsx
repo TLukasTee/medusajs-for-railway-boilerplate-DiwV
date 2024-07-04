@@ -11,6 +11,7 @@ import User from "@modules/common/icons/user"
 import MapPin from "@modules/common/icons/map-pin"
 import Package from "@modules/common/icons/package"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { TbLogout2 } from "react-icons/tb"
 
 const AccountNav = ({
   customer,
@@ -26,7 +27,7 @@ const AccountNav = ({
 
   return (
     <div>
-      <div className="small:hidden">
+      <div className="small:hidden ">
         {route !== `/${countryCode}/account` ? (
           <LocalizedClientLink
             href="/account"
@@ -92,7 +93,7 @@ const AccountNav = ({
                   >
                     <div className="flex items-center gap-x-2">
                       <ArrowRightOnRectangle />
-                      <span>Abmelden</span>
+                      <span className="font-bold text-red-700">Abmelden</span>
                     </div>
                     <ChevronDown className="transform -rotate-90" />
                   </button>
@@ -105,7 +106,7 @@ const AccountNav = ({
       <div className="hidden small:block">
         <div>
           <div className="pb-4">
-            <h3 className="text-base-semi">Account</h3>
+            <h3 className="text-base-semi text-xl font-extrabold text-red-600"> Dein Account</h3>
           </div>
           <div className="text-base-regular">
             <ul className="flex mb-0 justify-start items-start flex-col gap-y-4">
@@ -116,12 +117,12 @@ const AccountNav = ({
               </li>
               <li>
                 <AccountNavLink href="/account/profile" route={route!}>
-                  Profil
+                Profileinstellungen
                 </AccountNavLink>
               </li>
               <li>
                 <AccountNavLink href="/account/addresses" route={route!}>
-                  Adresse
+                  Lieferadresse
                 </AccountNavLink>
               </li>
               <li>
@@ -130,8 +131,8 @@ const AccountNav = ({
                 </AccountNavLink>
               </li>
               <li className="text-grey-700">
-                <button type="button" onClick={handleLogout}>
-                  Abmelden
+                <button type="button" onClick={handleLogout} className="font-bold inline-flex text-red-600">
+                  <TbLogout2 className="w-4 h-auto relative top-1 mr-2" /> Abmelden
                 </button>
               </li>
             </ul>

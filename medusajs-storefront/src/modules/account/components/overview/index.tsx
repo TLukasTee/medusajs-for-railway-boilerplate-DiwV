@@ -4,6 +4,7 @@ import { formatAmount } from "@lib/util/prices"
 
 import ChevronDown from "@modules/common/icons/chevron-down"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import CircularProgress from "./CircularProgress"
 
 type OverviewProps = {
   customer: Omit<Customer, "password_hash"> | null
@@ -11,33 +12,29 @@ type OverviewProps = {
 }
 
 const Overview = ({ customer, orders }: OverviewProps) => {
+  const profileCompletion = getProfileCompletion(customer);
+
   return (
     <div>
       <div className="hidden small:block">
         <div className="text-xl-semi flex justify-between items-center mb-4">
-          <span>Hallo {customer?.first_name} !</span>
-          <span className="text-small-regular text-ui-fg-base">
-            Angemeldet als:{" "}
-            <span className="font-semibold">{customer?.email}</span>
-          </span>
+          <span className="font-extrabold text-xl">Hallo {customer?.first_name} !</span>
+         
+          
         </div>
         <div className="flex flex-col py-8 border-t border-gray-200">
           <div className="flex flex-col gap-y-4 h-full col-span-1 row-span-2 flex-1">
             <div className="flex items-start gap-x-16 mb-6">
               <div className="flex flex-col gap-y-4">
-                <h3 className="text-large-semi">Profile</h3>
-                <div className="flex items-end gap-x-2">
-                  <span className="text-3xl-semi leading-none">
-                    {getProfileCompletion(customer)}%
-                  </span>
-                  <span className="uppercase text-base-regular text-ui-fg-subtle">
-                    FERTIG
-                  </span>
-                </div>
+                <h3 className="text-large-semi text-start font-bold text-lg">Profil | Status</h3>
+                  <div className="flex items-center gap-x-4">
+                <CircularProgress percentage={profileCompletion} />
+               
+        </div>
               </div>
 
-              <div className="flex flex-col gap-y-4">
-                <h3 className="text-large-semi">Addresses</h3>
+              {/* <div className="flex flex-col gap-y-4">
+                <h3 className="text-large-semi">Addressen</h3>
                 <div className="flex items-end gap-x-2">
                   <span className="text-3xl-semi leading-none">
                     {customer?.shipping_addresses?.length || 0}
@@ -46,12 +43,12 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                     GESPEICHERT
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-col gap-y-4">
               <div className="flex items-center gap-x-2">
-                <h3 className="text-large-semi">Letzten Bestellungen</h3>
+                <h3 className="text-large-semi font-extrabold">Letzten Bestellungen ({orders?.length})</h3>
               </div>
               <ul className="flex flex-col gap-y-4">
                 {orders && orders.length > 0 ? (
@@ -94,7 +91,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                     )
                   })
                 ) : (
-                  <span>Keine Bestellungen bis jetzt...</span>
+                  <span className="text-base">Keine Bestellungen bis jetzt.</span>
                 )}
               </ul>
             </div>

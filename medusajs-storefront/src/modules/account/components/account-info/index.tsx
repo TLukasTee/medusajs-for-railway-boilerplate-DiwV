@@ -43,7 +43,7 @@ const AccountInfo = ({
     <div className="text-small-regular">
       <div className="flex items-end justify-between">
         <div className="flex flex-col">
-          <span className="uppercase text-ui-fg-base">{label}</span>
+          <span className=" text-ui-fg-base">{label}</span>
           <div className="flex items-center flex-1 basis-0 justify-end gap-x-4">
             {typeof currentInfo === "string" ? (
               <span className="font-semibold">{currentInfo}</span>
@@ -59,7 +59,7 @@ const AccountInfo = ({
             onClick={handleToggle}
             type={state ? "reset" : "button"}
           >
-            {state ? "Cancel" : "Edit"}
+            {state ? "Abbrechen" : "Ändern"}
           </Button>
         </div>
       </div>
@@ -77,7 +77,7 @@ const AccountInfo = ({
           )}
         >
           <Badge className="p-2 my-4" color="green">
-            <span>{label} updated succesfully</span>
+            <span>{label} erfolgreich aktualisiert.</span>
           </Badge>
         </Disclosure.Panel>
       </Disclosure>
@@ -116,10 +116,12 @@ const AccountInfo = ({
             <div className="flex items-center justify-end mt-2">
               <Button
                 isLoading={pending}
-                className="w-full small:max-w-[140px]"
+                className="w-full small:max-w-[180px] bg-red-600 rounded-xl text-white hover:bg-red-700"
                 type="submit"
+                variant="transparent"
+
               >
-                Save changes
+                Änderungen speichern
               </Button>
             </div>
           </div>
