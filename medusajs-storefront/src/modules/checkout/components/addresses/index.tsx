@@ -1,5 +1,4 @@
-"use client"
-
+'use client'
 import {
   useSearchParams,
   useRouter,
@@ -49,6 +48,8 @@ const Addresses = ({
 
   const [message, formAction] = useFormState(setAddresses, null)
 
+  const isAddressFilled = cart?.shipping_address && (sameAsSBilling || cart?.billing_address)
+
   return (
     <div className="bg-white">
       <div className="flex flex-row items-center justify-between mb-6">
@@ -57,7 +58,7 @@ const Addresses = ({
           className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
         >
           Adresse
-          {!isOpen && <CheckCircleSolid />}
+          {!isOpen && <CheckCircleSolid className="relative top-1" />}
         </Heading>
         {!isOpen && cart?.shipping_address && (
           <Text>
@@ -93,8 +94,14 @@ const Addresses = ({
                 <BillingAddress cart={cart} countryCode={countryCode} />
               </div>
             )}
-            <SubmitButton       variant="transparent"
- className="w-1/3 text-white hover:bg-red-800 outline-0 outline-white bg-red-700 rounded-2xl text-center font-semibold border-2 border-white px-6 py-3">Weiter zum Versand</SubmitButton>
+            {isAddressFilled && (
+              <SubmitButton
+                variant="transparent"
+                className="w-1/3 text-white mt-4 pt-4 hover:bg-red-800 outline-0 outline-white bg-red-700 rounded-2xl text-center font-semibold border-2 border-white px-6 py-3"
+              >
+                Weiter zum Versand
+              </SubmitButton>
+            )}
             <ErrorMessage error={message} />
           </div>
         </form>

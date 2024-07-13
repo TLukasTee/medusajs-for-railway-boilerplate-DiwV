@@ -113,7 +113,7 @@ const Payment = ({
           )}
         >
           Zahlung
-          {!isOpen && paymentReady && <CheckCircleSolid />}
+          {!isOpen && paymentReady && <CheckCircleSolid className="relative top-1" />}
         </Heading>
         {!isOpen && paymentReady && (
           <Text>

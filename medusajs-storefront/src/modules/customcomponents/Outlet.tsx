@@ -17,7 +17,7 @@ const Outlet: React.FC = () => {
 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent flex items-center justify-center">
+          <div className="absolute inset-0 sm:bg-gradient-to-r bg-gradient-to-b from-black/10 to-transparent flex items-center justify-center">
             <div className="text-white text-center bg-gray-400/80  border-2 border-white p-4 rounded-2xl   relative">
               <p className="text-3xl md:text-4xl lg:text-5xl font-bold ">BIS ZU</p>
               <p className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-red-600">-17%</p>
@@ -26,7 +26,7 @@ const Outlet: React.FC = () => {
         </div>
 
         {/* Right side with product images and text */}
-        <div className="bg-gradient-to-r from-gray-200 to-black/10 p-6 md:w-1/2 flex flex-col justify-between">
+        <div className="sm:bg-gradient-to-r bg-gradient-to-b from-gray-200 to-black/10 p-6 md:w-1/2 flex flex-col justify-between">
           <div className="">
             <Image
               src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png"
