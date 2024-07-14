@@ -96,14 +96,18 @@ const plugins = [
       },
     },
   },
+  
   {
-    resolve: "medusa-plugin-sendgrid",
+    resolve: `medusa-plugin-sendgrid`,
     options: {
       api_key: process.env.SENDGRID_API_KEY,
-      from: "bestellung@z-nutrition.at",
-      order_placed_template: "d-e3b41d12b26645479a87b9c7105cafd9",
-    } 
-  }
+      from: process.env.SENDGRID_FROM,
+      order_placed_template: 
+        process.env.SENDGRID_ORDER_PLACED_ID,
+     
+    },
+  },
+
 ];
 
 const modules = {
