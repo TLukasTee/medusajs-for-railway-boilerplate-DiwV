@@ -77,13 +77,13 @@ const ZNAthletes: React.FC = () => {
     </svg>
 </div>
     <div className="bg-red-600 text-white py-16 ">
-      <div className="container max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8 text-center mx-auto  px-12 md:px-0">
-        <h2 className="text-3xl font-bold text-center inline-flex justify-center uppercase mx-4">Unsere <img
-                    className="h-12 w-auto pb-12 sm:h-28 sm:w-auto relative bottom-3"
+      <div className="container max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8 text-center mx-auto sm:pb-0  px-12 md:px-0">
+        <h2 className="text-3xl font-bold text-center inline-flex justify-center uppercase mx-4 ">Unsere <img
+                    className="h-14 w-auto  sm:pb-12 sm:h-28 sm:w-auto relative sm:bottom-3 bottom-2"
                     src="https://res.cloudinary.com/dd0kypcrk/image/upload/v1719478016/NUTRITION_deew1g.svg"
                     alt=""
                   />  Athleten</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-12 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-12 pt-6 sm:pt-0 ">
           {athletes.map(athlete => (
             <AthleteCard key={athlete.id} athlete={athlete} />
           ))}

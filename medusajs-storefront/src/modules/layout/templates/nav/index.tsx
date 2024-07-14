@@ -7,11 +7,12 @@ import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
-import { ChevronDownIcon, UserIcon } from "@heroicons/react/24/outline"
+import { Bars3Icon, ChevronDownIcon, MagnifyingGlassIcon, UserIcon } from "@heroicons/react/24/outline"
 import { hasFlag } from 'country-flag-icons'
 import  { AT } from 'country-flag-icons/react/3x2'
 import Header from "./Header"
 import DropdownNav from "./DropdownNav"
+import DropdownNavMobile from "./DropDownNavMobile"
 
 
 
@@ -34,29 +35,41 @@ export default async function Nav() {
           
             <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
         
+            <div className="flex items-center justify-between w-full lg:hidden">
 
-              <div className="flex items-center h-full mt-1">
-                <LocalizedClientLink
-                  href="/"
-                  className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
-                >
-                <div className=" inline-flex"> 
-
-                <img
-                    className="h-8 w-auto  sm:h-14 sm:w-auto"
-                    src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png"
-                    alt=""
-                  />
-                  </div>
-                </LocalizedClientLink>
-              </div>
-
+            <div className="flex items-center">
+              <DropdownNavMobile />
+              <MagnifyingGlassIcon className="h-6 w-6 text-neutral-500 relative left-2" />
+            </div>
+            <LocalizedClientLink href="/" className="flex-1 flex justify-center">
+              <img
+                className="h-16 w-auto"
+                src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png"
+                alt=""
+              />
+            </LocalizedClientLink>
+            <div className="flex items-center">
+              <a href="account" className="mr-4">
+                <UserIcon className="h-6 w-6 text-neutral-800" />
+              </a>
+              <Suspense fallback={<div className="h-6 w-6" />}>
+                <CartButton />
+              </Suspense>
+            </div>
+            </div>
+            <LocalizedClientLink href="/" className="hidden sm:flex">
+              <img
+                className="h-16 w-auto"
+                src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png"
+                alt=""
+              />
+            </LocalizedClientLink>
               <DropdownNav />
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
              
                 </div>
-                <div className="flex lg:ml-6">
+                <div className=" lg:ml-6 hidden sm:flex ">
                 <form className="max-w-md mx-auto">   
                         <label className="mb-2 text-sm font-medium text-gray-900 sr-only ">Suche</label>
                         <div className="relative">
@@ -65,7 +78,7 @@ export default async function Nav() {
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                 </svg>
                             </div>
-                            <input type="search" id="default-search" className="block py-2 w-8 outline-red-500 border-0 sm:border-2 px-2 sm:p-4 sm:ps-10 ps-7  placeholder:text-white  sm:placeholder:text-neutral-800  sm:w-96 text-sm text-neutral-900  bg-white rounded-full " placeholder="Suche nach Wheys, Magnesium..." required />
+                            <input type="search" id="default-search"  disabled className="block py-2 w-8  border-0 sm:border-2 px-2 sm:p-4 sm:ps-10 ps-7  placeholder:text-white  sm:placeholder:text-neutral-800  sm:w-96 text-sm text-neutral-900  bg-white rounded-full " placeholder="Suche nach Wheys, Magnesium..." required />
                         </div>
                     </form>
                 </div>
@@ -82,6 +95,7 @@ export default async function Nav() {
                 </div>
 
                 {/* Search */}
+                <div className="hidden sm:flex "> 
                 <div className="ml-2 flow-root lg:mx-4">
                   <a href="account" className="group  flex items-center p-2">
                     <UserIcon
@@ -95,7 +109,7 @@ export default async function Nav() {
                 <Suspense
                   fallback={
                     <LocalizedClientLink
-                      className="hover:text-ui-fg-base flex gap-2"
+                      className="hover:text-ui-fg-base flex gap-2 "
                       href="/cart"
                     >
                       Warenkorb
@@ -104,6 +118,7 @@ export default async function Nav() {
                 >
                   <CartButton />
                 </Suspense>
+              </div>
               </div>
             </nav>
             {/* <div className=" border-gray-200">

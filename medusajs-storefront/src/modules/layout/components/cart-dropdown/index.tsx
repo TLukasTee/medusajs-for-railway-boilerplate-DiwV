@@ -55,8 +55,8 @@ const CartDropdown = ({
 
   return (
     <div className="relative z-50">
-      <button onClick={toggleCart} className="flex items-center transition-all duration-200 hover:opacity-80">
-        <ShoppingBagIcon className="h-8 w-8 text-black" />
+      <button onClick={toggleCart} className="flex items-center transition-all duration-200 hover:opacity-80 mt-0 sm:mt-2">
+        <ShoppingBagIcon className="h-6 w-6 sm:h-8 sm:w-8 text-black " />
         <span className={`absolute -right-2 top-4 border-2 border-gray-100 text-xs ${totalItems > 0 ? 'bg-red-700 text-white border-0' : 'bg-white text-black'} font-bold rounded-full px-1.5 text-sm transition-all duration-200`}>
           {totalItems}
         </span>

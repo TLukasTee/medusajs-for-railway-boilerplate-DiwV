@@ -39,9 +39,9 @@ export default function HeroCustom() {
                   <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 pb-28">
                     <div className="flex items-center space-x-4 lg:space-x-4">
                       <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div className="overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100 sm:max-w-3xl max-w-lg sm:mt-12 pt-12 sm:pt-0 pr-36">
+                        <div className="overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100 sm:max-w-3xl max-w-xl sm:mt-12 pt-24 sm:pt-0 pr-36">
                           <img
-                            src="https://res.cloudinary.com/dd0kypcrk/image/upload/v1719412241/Kopie_von_Kein_Titel_1920_x_1080_px_md9pkk.svg"
+                            src="https://res.cloudinary.com/dd0kypcrk/image/upload/v1720900909/Kein_Titel_1920x1080_3_c0rppq.png"
                             alt=""
                             className="h-full w-full object-cover object-center"
                           />
