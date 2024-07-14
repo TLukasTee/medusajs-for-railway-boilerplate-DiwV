@@ -20,7 +20,7 @@ export default function OrderCompletedTemplate({
   const isOnboarding = cookies().get("_medusa_onboarding")?.value === "true"
 
   return (
-    <div className="py-6 min-h-[calc(100vh-64px)] ">
+    <div className="mx-auto max-w-2xl px-12 py-16 sm:px-6 sm:py-32 sm:pb-38 lg:max-w-7xl lg:px-8 ">
       <div className="content-container flex flex-col justify-center items-center gap-y-10 max-w-4xl h-full w-full">
         {isOnboarding && <OnboardingCta orderId={order.id} />}
         <div className="flex flex-col gap-4 max-w-4xl h-full bg-white w-full py-10">
@@ -37,8 +37,8 @@ export default function OrderCompletedTemplate({
           </Heading>
           <Items items={order.items} region={order.region} />
           <CartTotals data={order} />
-          <ShippingDetails order={order} />
-          <PaymentDetails order={order} />
+          {/* <ShippingDetails order={order} />
+          <PaymentDetails order={order} /> */}
           <Help />
         </div>
       </div>

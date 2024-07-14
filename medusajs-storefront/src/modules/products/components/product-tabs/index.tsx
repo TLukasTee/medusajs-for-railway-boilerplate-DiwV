@@ -23,17 +23,17 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 
   return (
     <div className="w-full">
-      <div className="text-small-regular py-8">
+      <div className="text-small-regular pb-8 pt-5">
   
        
   <div className="">
   
-  <label className="block text-sm font-medium mb-1 text-neutral-700">Geschmack</label>
-  <div className="relative">
-    <select className="w-full p-2 border rounded-xl border-2 appearance-none ">
+  <label className="block text-sm font-medium mb-1 text-neutral-800">Geschmack</label>
+  <div className="relative bg-white">
+    <select className="w-full p-2 rounded-md border-2 appearance-none bg-white text-black">
       <option>{product.material ? product.material : "Neutral"}</option>
     </select>
-    <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2" />
+    <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black" />
   </div>
 </div>
 

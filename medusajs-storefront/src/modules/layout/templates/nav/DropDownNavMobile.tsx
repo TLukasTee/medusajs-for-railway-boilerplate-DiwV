@@ -88,7 +88,8 @@ const navigation = {
           },
           {
             id: 'brands',
-            name: 'Zusatstoffe',
+            name: 'Zusatzstoffe',
+            href: '/products/preworkout-gorilla-zilime',
             items: [
               { name: 'Gorilla Pre Workout', href: '/products/preworkout-gorilla-zilime' },
              
@@ -204,9 +205,12 @@ export default function DropdownNavMobile() {
                       </div>
                       {category.sections.map((section) => (
                         <div key={section.name}>
+                                                  <a href={section.href} className=" block font-medium text-gray-900">
+
                           <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
                             {section.name}
                           </p>
+                          </a>
                          
                         </div>
                       ))}

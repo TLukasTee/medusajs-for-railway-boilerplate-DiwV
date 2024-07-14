@@ -26,7 +26,7 @@ const Review = ({
         <Heading
           level="h2"
           className={clx(
-            "flex flex-row text-3xl-regular gap-x-2 items-baseline",
+            "flex flex-row text-3xl-regular gap-x-2 items-baseline text-neutral-800",
             {
               "opacity-50 pointer-events-none select-none": !isOpen,
             }

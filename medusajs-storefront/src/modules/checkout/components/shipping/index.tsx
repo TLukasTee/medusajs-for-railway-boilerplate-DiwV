@@ -69,7 +69,7 @@ const Shipping: React.FC<ShippingProps> = ({
         <Heading
           level="h2"
           className={clx(
-            "flex flex-row text-3xl-regular gap-x-2 items-baseline",
+            "flex flex-row text-3xl-regular gap-x-2 items-baseline text-neutral-800",
             {
               "opacity-50 pointer-events-none select-none":
                 !isOpen && cart.shipping_methods.length === 0,
@@ -86,7 +86,7 @@ const Shipping: React.FC<ShippingProps> = ({
             <Text>
               <button
                 onClick={handleEdit}
-                className="text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
+                className="text-ui-fg-interactive hover:text-ui-fg-interactive-hover "
               >
                 Ändern
               </button>
@@ -107,22 +107,22 @@ const Shipping: React.FC<ShippingProps> = ({
                       key={option.id}
                       value={option.id}
                       className={clx(
-                        "flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active",
+                        "flex items-center text-neutral-800 justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active",
                         {
-                          "border-ui-border-interactive":
+                          "border-ui-border-interactive text-neutral-800":
                             option.id ===
                             cart.shipping_methods[0]?.shipping_option_id,
                         }
                       )}
                     >
-                      <div className="flex items-center gap-x-4">
+                      <div className="flex items-center gap-x-4 text-neutral-800">
                         <Radio
                           checked={
                             option.id ===
                             cart.shipping_methods[0]?.shipping_option_id
                           }
                         />
-                        <span className="text-base-regular">{option.name}</span>
+                        <span className="text-base-regular text-neutral-800">{option.name}</span>
                       </div>
                       <span className="justify-self-end text-ui-fg-base">
                         {formatAmount({

@@ -2,51 +2,99 @@
 import { Image as MedusaImage } from "@medusajs/medusa"
 import { Container } from "@medusajs/ui"
 import Image from "next/image"
-import { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 
 type ImageGalleryProps = {
   images: MedusaImage[]
 }
 
 const ImageGallery = ({ images }: ImageGalleryProps) => {
-  const [selectedImage, setSelectedImage] = useState(images[0])
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 75) {
+      // Swipe left
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    } else if (touchEndX.current - touchStartX.current > 75) {
+      // Swipe right
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+    }
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Reset index if screen size changes (e.g., from mobile to desktop)
+      setCurrentIndex(0)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
-    <div className="flex items-start relative">
-      {/* Thumbnails */}
-      <div className="flex flex-col gap-y-4 mr-4 w-1/5">
-        {images.map((image, index) => (
-          <Container
-            key={image.id}
-            className="relative aspect-square w-full overflow-hidden bg-ui-bg-subtle cursor-pointer"
-            onClick={() => setSelectedImage(image)}
-          >
-            <Image
-              src={image.url}
-              priority={index <= 2}
-              className="absolute inset-0 rounded-rounded object-cover"
-              alt={`Product thumbnail ${index + 1}`}
-              fill
-              sizes="(max-width: 768px) 100px, 150px"
-            />
-          </Container>
+    <Container className="flex flex-col">
+      {/* Main image with swipe functionality */}
+      <div 
+        className="relative w-full h-[300px] md:h-[400px] mb-2"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <Image
+          src={images[currentIndex].url}
+          alt={`Product image ${currentIndex + 1}`}
+          className="object-cover"
+          fill
+          sizes="100vw"
+          priority={currentIndex === 0}
+        />
+      </div>
+
+      {/* Pagination dots for mobile */}
+      <div className="flex justify-center space-x-2 md:hidden">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`h-2 w-2 rounded-full ${
+              index === currentIndex ? 'bg-gray-800' : 'bg-gray-300'
+            }`}
+          />
         ))}
       </div>
 
-      {/* Main image */}
-      <div className="flex-1">
-        <Container className="relative aspect-[29/34] w-full overflow-hidden bg-ui-bg-subtle">
-          <Image
-            src={selectedImage.url}
-            priority
-            className="absolute inset-0 rounded-rounded object-scale-down"
-            alt="Selected product image"
-            fill
-            sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-          />
-        </Container>
+      {/* Thumbnails for desktop */}
+      <div className="hidden md:grid grid-cols-4 gap-2 mt-10">
+        {images.map((image, index) => (
+          <button
+            key={index}
+            className={`relative aspect-square ${
+              index === currentIndex ? 'rounded-xl' : ''
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          >
+            <Image
+              src={image.url}
+              alt={`Thumbnail ${index + 1}`}
+              className={`relative aspect-square ${
+                index === currentIndex ? 'rounded-xl ring-2 ring-gray-800' : ''
+              }`}
+              fill
+              sizes="(max-width: 768px) 100vw, 25vw"
+            />
+          </button>
+        ))}
       </div>
-    </div>
+    </Container>
   )
 }
 

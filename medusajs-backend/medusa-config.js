@@ -1,4 +1,5 @@
 const dotenv = require("dotenv");
+const { resolve } = require("path");
 
 let ENV_FILE_NAME = "";
 switch (process.env.NODE_ENV) {
@@ -60,6 +61,8 @@ const fileServicePlugin = cloudinaryConfigured
 const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
+  
+
   fileServicePlugin,
   {
     resolve: "@medusajs/admin",
@@ -79,6 +82,28 @@ const plugins = [
       webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
     },
   },
+  {
+    resolve: `medusa-plugin-meilisearch`,
+    options: {
+      // config object passed when creating an instance
+      // of the MeiliSearch client
+      config: {
+        host: process.env.MEILISEARCH_HOST,
+        apiKey: process.env.MEILISEARCH_API_KEY,
+      },
+      settings: {
+        // index settings...
+      },
+    },
+  },
+  {
+    resolve: "medusa-plugin-sendgrid",
+    options: {
+      api_key: process.env.SENDGRID_API_KEY,
+      from: "bestellung@z-nutrition.at",
+      order_placed_template: "d-e3b41d12b26645479a87b9c7105cafd9",
+    } 
+  }
 ];
 
 const modules = {

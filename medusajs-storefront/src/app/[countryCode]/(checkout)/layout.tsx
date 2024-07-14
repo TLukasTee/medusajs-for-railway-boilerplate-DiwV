@@ -27,7 +27,7 @@ export default function CheckoutLayout({
             href="/"
             className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
           >
-              <img src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png" alt="Z Nutrition Logo" className="h-20 mb-6" />
+              <img src="https://res.cloudinary.com/dcfburp7p/image/upload/v1719253729/z-nutritionlogo_qmtyta.png" alt="Z Nutrition Logo" className="h-14 mb-6" />
           </LocalizedClientLink>
           <div className="flex-1 basis-0" />
         </nav>

@@ -153,9 +153,10 @@ export default function ProductActions({
           onClick={handleAddToCart}
           disabled={!inStock || !variant}
           variant="transparent"
-          className="w-full bg-red-600 text-lg max-h-14 text-white border-2 rounded-full hover:bg-red-700 py-3  font-bold mb-4 shadow-0 outline-0  "
+          className="w-full bg-red-600 text-lg max-h-14 text-white border-2 rounded-full hover:bg-red-700 py-2.5  font-bold mb-4 shadow-0 outline-0  "
           isLoading={isAdding}
         >            
+
 
 
       {!variant
@@ -164,7 +165,7 @@ export default function ProductActions({
           ? "Ausverkauft"
           : (
               <>
-                  <TbShoppingBagPlus className="w-5 m-0 p-0 h-5" /> In den Warenkorb
+                  <TbShoppingBagPlus className="w-5 m-0 p-0 h-5" />  In den Warenkorb
               </>
             )}
         </Button>

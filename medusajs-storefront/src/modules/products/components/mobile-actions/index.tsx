@@ -13,6 +13,7 @@ import X from "@modules/common/icons/x"
 import { getProductPrice } from "@lib/util/get-product-price"
 import { Region } from "@medusajs/medusa"
 import OptionSelect from "../option-select"
+import { TbShoppingBagPlus } from "react-icons/tb"
 
 type MobileActionsProps = {
   product: PricedProduct
@@ -71,9 +72,9 @@ const MobileActions: React.FC<MobileActionsProps> = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="bg-white flex flex-col gap-y-3 justify-center items-center text-large-regular p-4 h-full w-full border-t border-gray-200">
+          <div className="bg-white flex flex-col gap-y-3 justify-center items-center text-large-regular p-4 h-full w-full border-t border-gray-200 ">
             <div className="flex items-center gap-x-2">
-              <span>{product.title}</span>
+              <span className="text-neutral-800">{product.title}</span>
               <span>—</span>
               {selectedPrice ? (
                 <div className="flex items-end gap-x-2 text-ui-fg-base ">
@@ -111,15 +112,15 @@ const MobileActions: React.FC<MobileActionsProps> = ({
               <Button
                 onClick={handleAddToCart}
                 disabled={!inStock || !variant}
-                className="w-full bg-red-600 outline-0 text-white text-base"
+                className="w-full bg-red-600 rounded-full py-2.5 outline-0 text-white text-base"
                 isLoading={isAdding}
                 variant="transparent"
               >
-                {!variant
-                  ? "Select variant"
-                  : !inStock
-                  ? "Out of stock"
-                  : "Zum Warenkorb hinzufügen"}
+               {!variant
+                ? "Variante Auswählen"
+                : !inStock
+                ? "Ausverkauft"
+                : <><TbShoppingBagPlus className="w-5 m-0 p-0 h-5" /> In den Warenkorb</>}
               </Button>
             </div>
           </div>

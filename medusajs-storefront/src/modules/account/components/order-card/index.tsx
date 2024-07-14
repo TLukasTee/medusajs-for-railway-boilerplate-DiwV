@@ -23,7 +23,7 @@ const OrderCard = ({ order }: OrderCardProps) => {
 
   return (
     <div className="bg-white flex flex-col">
-      <div className="uppercase text-large-semi mb-1">#{order.display_id}</div>
+      <div className=" text-large-semi mb-1">BestellNr. #{order.display_id}</div>
       <div className="flex items-center divide-x divide-gray-200 text-small-regular text-ui-fg-base">
         <span className="pr-2">
           {new Date(order.created_at).toDateString()}
@@ -36,14 +36,14 @@ const OrderCard = ({ order }: OrderCardProps) => {
           })}
         </span>
         <span className="pl-2">{`${numberOfLines} ${
-          numberOfLines > 1 ? "items" : "item"
+          numberOfLines > 1 ? "Produkte" : "Produkt"
         }`}</span>
       </div>
       <div className="grid grid-cols-2 small:grid-cols-4 gap-4 my-4">
         {order.items.slice(0, 3).map((i) => {
           return (
             <div key={i.id} className="flex flex-col gap-y-2">
-              <Thumbnail thumbnail={i.thumbnail} images={[]} size="full" />
+              <Thumbnail thumbnail={i.thumbnail} images={[]} size="square" />
               <div className="flex items-center text-small-regular text-ui-fg-base">
                 <span className="text-ui-fg-base font-semibold">{i.title}</span>
                 <span className="ml-2">x</span>
@@ -57,15 +57,15 @@ const OrderCard = ({ order }: OrderCardProps) => {
             <span className="text-small-regular text-ui-fg-base">
               + {numberOfLines - 4}
             </span>
-            <span className="text-small-regular text-ui-fg-base">more</span>
+            <span className="text-small-regular text-ui-fg-base">Mehr</span>
           </div>
         )}
       </div>
-      <div className="flex justify-end">
+      {/* <div className="flex justify-end">
         <LocalizedClientLink href={`/account/orders/details/${order.id}`}>
-          <Button variant="secondary">See details</Button>
+          <Button variant="secondary">Details</Button>
         </LocalizedClientLink>
-      </div>
+      </div> */}
     </div>
   )
 }

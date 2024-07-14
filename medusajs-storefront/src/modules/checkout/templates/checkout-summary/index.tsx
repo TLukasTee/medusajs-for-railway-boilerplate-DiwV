@@ -26,7 +26,7 @@ const CheckoutSummary = async () => {
         <Divider className="my-6 small:hidden" />
         <Heading
           level="h2"
-          className="flex flex-row text-3xl-regular items-baseline"
+          className="flex flex-row text-3xl-regular items-baseline text-neutral-800"
         >
           In deinem Warenkorb
         </Heading>

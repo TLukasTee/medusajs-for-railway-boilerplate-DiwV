@@ -126,6 +126,8 @@ const StripePaymentButton = ({
         onClick={handlePayment}
         size="large"
         isLoading={submitting}
+        variant="transparent"
+        className="bg-red-600 hover:bg-red-700 text-white"
       >
         Bestellung aufgeben
       </Button>

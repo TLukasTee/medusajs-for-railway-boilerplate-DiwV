@@ -15,17 +15,17 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             href={`/collections/${product.collection.handle}`}
             className="text-medium text-ui-fg-muted hover:text-ui-fg-subtle"
           >
-            {product.collection.title}
+            {/* {product.collection.title} */}
           </LocalizedClientLink>
         )}
-        <Heading level="h1" className="text-3xl font-bold mb-2">
+        <Heading level="h1" className="text-3xl font-bold mb-2 mt-4 text-neutral-800">
           {product.title}
         
         </Heading>
     
       
 
-        <Text className="text-medium text-ui-fg-subtle">
+        <Text className="text-medium  text-neutral-800">
           {product.description}
         </Text>
       </div>
